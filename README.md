@@ -1,69 +1,46 @@
-# Rejection
+# Getting Started with Create React App
 
-A portfolio project for professional developers to highlight skills with modern tech stacks like React, Redux, Serverless, etc. [EricElliottJS.com](https://ericelliottjs.com).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Want to work as a team?
+## Available Scripts
 
-You gotta lose to win.
+In the project directory, you can run:
 
-Train yourself to:
+### `yarn start`
 
-* Get a raise
-* Sell more
-* Develop more business
-* Negotiate better deals
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The game has one rule:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-**You must be rejected by a human being at least once per day.**
+### `yarn test`
 
-Ask for things outside your comfort zone, and you'll find yourself winning a lot more.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Win = 1 point.
-Rejection = 10 points.
+### `yarn build`
 
-How long can you make your rejection streak last?
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Basic Level
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Build a UI that lets you keep track of your score. Include a text input for the ask, who you asked, and two buttons: "Accepted" or "Rejected". For asynchronous requests such as emails or messages, record the score at the time you get the answer, not at the time you ask.
+### `yarn eject`
 
-Use HTML+CSS and store a record of the data in `localStorage`.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Your data structure can be a simple array of ask objects:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```js
-interface Question {
-  id: String           // id of the question so you can get/edit/remove by id
-  timestamp: Number,   // output from Date.now()
-  question: String,    // the ask
-  askee: String,       // person asked
-  status: String       // 'Accepted', 'Rejected', 'Unanswered'
-}
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You can calculate everything else you need to know by reducing over the list of asks.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-It may be useful to display a running tally of the user's current score. Just remember that the current day's subtotal needs to be recalculated each time an ask is accepted or rejected, so it will be useful to keep the list in an array that you can [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) with each new ask added by the user.
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Mid level
-
-Add an API to store data using a web service and database. Track multiple users (which means you'll need to [add user authentication](https://medium.com/javascript-scene/passwords-are-obsolete-how-to-secure-your-app-and-protect-your-users-1cd6c7b7c3bc)).
-
-Try [Firebase](https://firebase.google.com/) for data storage.
-
-
-## Extra credit
-
-* Add mobile apps by turning your web app into a [Progressive Web Application](https://web.dev/pwa-checklist/).
-
-
-## To Implement:
-
-1. Fork this repo
-2. Implement your solution.
-3. Open an issue with a link to your fork.
-
-To get credit, you must [open an issue](https://github.com/learn-javascript-courses/rejection/issues/new?title=Challenge+completed+level:+basic/mid/advanced) with a link to your fork.
+To learn React, check out the [React documentation](https://reactjs.org/).
