@@ -8,9 +8,8 @@ const Navbar: React.FC = () => {
       <section>
         <h1>Rejection App</h1>
         <div>
-          <div>
-            <Link to="/">Ask a Question</Link>
-          </div>
+          <Link to="/">Your Questions</Link>
+          <Link to="/ask-a-question">Ask a Question</Link>
         </div>
       </section>
     </nav>

@@ -12,12 +12,12 @@ const QuestionsList: React.FC = () => {
   const orderedQuestions = questions.slice().sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 
   const acceptQuestion = (question: Question) => () => {
-    dispatch(accept(question.id));
+    dispatch(accept(question));
     dispatch(incrementOne());
   };
 
   const rejectQuestion = (question: Question) => () => {
-    dispatch(reject(question.id));
+    dispatch(reject(question));
     dispatch(incrementTen());
   };
 

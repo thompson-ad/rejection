@@ -53,14 +53,14 @@ export const questionsSlice = createSlice({
     },
     accept: (state, action) => {
       const { id } = action.payload;
-      const existingQuestion = state.find((post) => post.id === id);
+      const existingQuestion = state.find((question) => question.id === id);
       if (existingQuestion) {
         existingQuestion.status = ACCEPTED;
       }
     },
     reject: (state, action) => {
       const { id } = action.payload;
-      const existingQuestion = state.find((post) => post.id === id);
+      const existingQuestion = state.find((question) => question.id === id);
       if (existingQuestion) {
         existingQuestion.status = REJECTED;
       }
