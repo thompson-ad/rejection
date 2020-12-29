@@ -1,24 +1,34 @@
 import * as React from 'react';
 import { useAppDispatch } from '../../app/store';
-import { questionAdded } from './questionsSlice';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { addNewQuestion } from './questionsSlice';
 
 const AskQuestionForm: React.FC = () => {
   const [question, setQuestion] = React.useState('');
   const [askee, setAskee] = React.useState('');
+  const [addRequestStatus, setAddRequestStatus] = React.useState('idle');
 
   const dispatch = useAppDispatch();
 
   const onQuestionChanged = (e: React.ChangeEvent<HTMLInputElement>) => setQuestion(e.target.value);
   const onAskeeChanged = (e: React.ChangeEvent<HTMLInputElement>) => setAskee(e.target.value);
 
-  const canSave = Boolean(question) && Boolean(askee);
+  const canSave = [question, askee].every(Boolean) && addRequestStatus === 'idle';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (question && askee) {
-      dispatch(questionAdded(question, askee));
-      setQuestion('');
-      setAskee('');
+    if (canSave) {
+      try {
+        setAddRequestStatus('pending');
+        const resultAction = await dispatch(addNewQuestion({ question, askee }));
+        unwrapResult(resultAction);
+        setQuestion('');
+        setAskee('');
+      } catch (err) {
+        console.error('Failed to save the post: ', err);
+      } finally {
+        setAddRequestStatus('idle');
+      }
     }
   };
 
