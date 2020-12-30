@@ -6,6 +6,9 @@ import Navbar from './app/NavBar';
 import AskQuestionForm from './features/questions/AskQuestionForm';
 import QuestionsList from './features/questions/QuestionsList';
 
+import './styles/global.css';
+import './styles/reset.css';
+
 const App: React.FC = () => {
   return (
     <Router>
