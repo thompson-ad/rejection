@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import * as React from 'react';
 import { useAppDispatch } from '../../app/store';
 import { unwrapResult } from '@reduxjs/toolkit';
@@ -33,14 +36,14 @@ const AskQuestionForm: React.FC = () => {
   };
 
   return (
-    <section>
-      <h2>Ask and you may receive</h2>
-      <form onSubmit={handleSubmit}>
+    <section css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h2 css={{ fontFamily: 'Bad Script' }}>Ask and you may receive...</h2>
+      <form css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onSubmit={handleSubmit}>
         <label htmlFor="questionInput">Ask a question</label>
         <input type="text" id="questionInput" name="question" required onChange={onQuestionChanged} value={question} />
         <label htmlFor="askeeInput">To</label>
         <input type="text" id="askeeInput" name="askee" required onChange={onAskeeChanged} value={askee} />
-        <button type="submit" disabled={!canSave}>
+        <button css={{ marginTop: 10 }} type="submit" disabled={!canSave}>
           Ask question
         </button>
       </form>
